@@ -3,8 +3,8 @@ import time
 import csv
 from base64 import b64decode
 
-ZENROWS_API_KEY = "cc3cc8148eb07027e64c84b03db0d6f50b92b6f4"
-ZYTE_API_KEY = "c9330f483ada4e9ba8aed92cf1e898e6"
+ZENROWS_API_KEY = "YOUR_ZENROWS_API_KEY"
+ZYTE_API_KEY = "YOUR_ZYTE_API_KEY"
 
 URLS = [
     {"name": "Amazon",     "url": "https://www.amazon.com/dp/B09B8YWXDF"},
