@@ -3,11 +3,11 @@ import time
 import csv
 from base64 import b64decode
 
-ZENROWS_API_KEY = "YOUR_ZENROWS_API_KEY"
-ZYTE_API_KEY = "YOUR_ZYTE_API_KEY"
+ZENROWS_API_KEY = "Enter API"
+ZYTE_API_KEY = "Enter API"
 
 URLS = [
-    {"name": "Amazon",     "url": "https://www.amazon.com/dp/B09B8YWXDF"},
+    {"name": "Amazon",     "url": "https://www.amazon.com/s?k=laptop"},
     {"name": "Glassdoor",  "url": "https://www.glassdoor.com/Overview/Working-at-Google-EI_IE9079.11,17.htm"},
     {"name": "Idealista",  "url": "https://www.idealista.com/en/news/real-estate-in-spain/housing/"},
     {"name": "Google",     "url": "https://www.google.com/search?q=best+web+scraping+api"},
@@ -17,7 +17,7 @@ URLS = [
     {"name": "LinkedIn",   "url": "https://www.linkedin.com/in/satyanadella/"},
 ]
 
-REQUESTS_PER_URL = 10
+REQUESTS_PER_URL = 100
 results = []
 
 print("\n--- Starting ZenRows Tests ---\n")
@@ -81,9 +81,9 @@ for target in URLS:
         print(f"Zyte | {target['name']} | #{i+1} | {status} | Title: {has_title} | {elapsed}ms")
         time.sleep(1)
 
-with open("results.csv", "w", newline="") as f:
+with open("results100.csv", "w", newline="") as f:
     writer = csv.DictWriter(f, fieldnames=["platform", "target", "request_num", "status_code", "has_title", "response_time_ms"])
     writer.writeheader()
     writer.writerows(results)
 
-print("\n--- Done! Results saved to results.csv ---")
+print("\n--- Done! Results saved to results100.csv ---")
